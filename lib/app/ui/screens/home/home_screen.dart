@@ -12,10 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _index = 0;
-  final List<Widget> _screens = [
-    ParkingSpaceScreen(),
-    Container(color: Colors.red)
-  ];
+  final List<Widget> _screens = [ParkingSpaceScreen(), HistoricScreen()];
 
   @override
   Widget build(BuildContext context) {

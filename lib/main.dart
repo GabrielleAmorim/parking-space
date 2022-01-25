@@ -5,11 +5,11 @@ import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const RaroLabsParkingApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class RaroLabsParkingApp extends StatelessWidget {
+  const RaroLabsParkingApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

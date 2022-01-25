@@ -10,6 +10,7 @@ class HomeController extends GetxController {
       <Parking>[Parking(), Parking(), Parking(), Parking(), Parking()].obs;
   final List<Parking> parkingB =
       <Parking>[Parking(), Parking(), Parking(), Parking(), Parking()].obs;
+  final historic = <Parking>[].obs;
 
   final carLicenseController = TextEditingController();
 
@@ -21,8 +22,8 @@ class HomeController extends GetxController {
 
   void fillParking(Parking parking, int index, int list, String carLicense) {
     parking.isFilled = true;
-    parking.entryDate = DateTime.now();
     parking.carLicense = carLicense;
+    parking.entryDate = DateTime.now();
     if (list == 0) {
       parkingA[index] = parking;
     } else {
@@ -32,8 +33,14 @@ class HomeController extends GetxController {
   }
 
   void unfillParking(Parking parking, int index, int list) {
+    Parking saved = Parking(
+        carLicense: parking.carLicense,
+        entryDate: parking.entryDate,
+        exitDate: DateTime.now(),
+        label: list == 0 ? "A${index + 1}" : "B${index + 1}");
+    historic.add(saved);
     parking.isFilled = false;
-    parking.entryDate = null;
+    parking.exitDate = null;
     parking.carLicense = "";
     if (list == 0) {
       parkingA[index] = parking;

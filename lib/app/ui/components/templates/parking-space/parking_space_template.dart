@@ -181,7 +181,7 @@ class ParkingSpaceTemplate extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Obx(() => Container(
+                Obx(() => SizedBox(
                       height: Get.height * 1.2,
                       width: Get.width * 0.4,
                       child: ListView.separated(
@@ -201,7 +201,7 @@ class ParkingSpaceTemplate extends StatelessWidget {
                           },
                           itemCount: controller.parkingA.length),
                     )),
-                Obx(() => Container(
+                Obx(() => SizedBox(
                       height: Get.height * 1.2,
                       width: Get.width * 0.4,
                       child: ListView.separated(
